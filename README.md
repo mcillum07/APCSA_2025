@@ -1,4 +1,4 @@
-# APCSA_2025
+# APCSA_2025 Class Notes
 
 This is a page that contains all my class notes for each lesson. You can find the reference if needed.
 

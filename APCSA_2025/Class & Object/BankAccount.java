@@ -1,5 +1,5 @@
 public class BankAccount {
-    // Fields
+    // Properties
     private String name;
     private int accountNumber;
     private double initialBalance;
@@ -30,6 +30,12 @@ public class BankAccount {
     // Returns true if the deposit is successful, false otherwise.
     public boolean deposit(double amount) {
         /* to be implemented */
+        // How would you add amount into intialBalance
+        if (amount < 0) {
+            return false;
+        }
+        this.initialBalance += amount;
+        return true;
     }
 
     // Withdraws the given amount from the account. 
@@ -38,6 +44,12 @@ public class BankAccount {
     // Returns true if the withdrawal is successful, false otherwise.
     public boolean withdraw(double amount) {
         /* to be implemented */
+        // You must have enough money in ????? (A property)
+        if (amount > this.getBalance()) {
+            return false;
+        }
+        this.initialBalance -= amount;
+        return true;
     }
 
     // Transfers the given amount to another BankAccount. 
@@ -45,6 +57,12 @@ public class BankAccount {
     // Returns true if the transfer is successful, false otherwise.
     public boolean transfer(BankAccount other, double amount) {
         /* to be implemented */
+        if (amount > this.getBalance()) {
+            return false;
+        }
+        this.initialBalance -= amount;
+        other.initialBalance += amount;
+        return true;
     }
 
     public static void main(String[] args) {
